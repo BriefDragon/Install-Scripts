@@ -30,6 +30,6 @@ read -p "Bitte jetzt als letztes die Boot Partition auch im selben Schema." Star
 cat /run/archiso/bootmnt/own-installer/art-programs.txt 
 pacstrap -K /mnt base linux linux-firmware grub efibootmgr nano networkmanager neofetch sof-firmware base-devel git sudo 
 genfstab /mnt > /mnt/etc/fstab
-cp /run/archiso/bootmnt/own-installer /mnt/root
+cp -r /run/archiso/bootmnt/own-installer /mnt/root
 arch-chroot /mnt /bin/bash /root/own-installer/chroot-teil.sh
 #ende dieses Teils 
