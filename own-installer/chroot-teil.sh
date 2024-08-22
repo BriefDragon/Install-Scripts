@@ -74,7 +74,7 @@ fi
 #Programme
 cat /root/own-Installer/art-programs.txt
 if [ "$WMDE" == WM ]; then
-    pacman -S --noconfirm wayland hyprland hyprpaper pipewire firefox libreoffice discover nemo wofi xcursor-vanilla-dmz
+    pacman -S --noconfirm wayland hyprland pipewire firefox libreoffice discover nemo wofi xcursor-vanilla-dmz kitty
     #cp /root/own-installer/dotinstaller.sh /root/home/$USERNAME
 fi
 if [ "$WMDE" == DE ]; then 
