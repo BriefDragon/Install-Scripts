@@ -17,7 +17,7 @@ echo "Wer Windows Dual Booten will, muss nach der Installation os-prober muss de
 read -p "Was soll der Hostname fuer das Geraet werden?" HOSTNAME
 read -p "Welches Tastaturlayout? QWERTZ=de-latin1 QWERTY=us " TASTATURLAYOUT
 read -p "Soll ein User erstellt werden? (y/N) (Groß ist der Standart-Wert)" CHOISEUSER
-    if [$CHOISEUSER == y || $CHOISEUSER == Y || $CHOISEUSER == yes || $CHOISEUSER == Yes ||]; then
+    if [$CHOISEUSER==y || $CHOISEUSER==Y || $CHOISEUSER==yes || $CHOISEUSER==Yes ||]; then
         read -p "Wie soll er Heissen?" USERNAME
         read -p "Was soll sein Passwort werden?" USERPW
         read -p "Bitte Bestätigen" USERPW2
