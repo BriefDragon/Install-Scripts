@@ -17,7 +17,7 @@ echo "Wer Windows Dual Booten will, muss nach der Installation os-prober muss de
 read -p "Was soll der Hostname fuer das Geraet werden?" HOSTNAME
 read -p "Welches Tastaturlayout? QWERTZ=de-latin1 QWERTY=us " TASTATURLAYOUT
 read -p "Soll ein User erstellt werden? (y/N) (Groß ist der Standart-Wert)" CHOISEUSER
-    if [ "$CHOISEUSER"==y || "$CHOISEUSER"==Y || "$CHOISEUSER"==yes || "$CHOISEUSER"==Yes ||]; then
+    if [ "$CHOISEUSER"==y ]; then #|| "$CHOISEUSER"==Y || "$CHOISEUSER"==yes || "$CHOISEUSER"==Yes ||]; then
         read -p "Wie soll er Heissen?" USERNAME
         read -p "Was soll sein Passwort werden?" USERPW
         read -p "Bitte Bestätigen" USERPW2
@@ -36,7 +36,7 @@ read -p "Wie soll das Root-Passwort lauten? (Root ist das eqivalent zum Windows 
             exit 1
         fi
 read -p "Wisst du einen Minimalen Install?(y/N) (Ohne DE(KDE Plasma) or WM(Hyprland))" MINIMAL
-    if [ "$MINIMAL" == y ] #|| "$MINIMAL" == Y || "$MINIMAL" == yes || "$MINIMAL" == Yes ||]; then
+    if [ "$MINIMAL" == y ]; then #|| "$MINIMAL" == Y || "$MINIMAL" == yes || "$MINIMAL" == Yes ||]; then
         cat /root/own-instraller/art-config1.txt
         echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen
         locale-gen
@@ -61,7 +61,7 @@ echo "KEYMAP="$TASTATURLAYOUT"" >> /etc/vconsole.conf
 echo "$HOSTNAME" >> /etc/hostname
 chpasswd <<< "root:"$ROOTPW""
 #"Treiber"
-if [ "$NVIDIA" == y ] #|| "$NVIDIA" == yes || "$NVIDIA" == Y || "$NVIDIA" == Yes || ]; then +
+if [ "$NVIDIA" == y ]; then #|| "$NVIDIA" == yes || "$NVIDIA" == Y || "$NVIDIA" == Yes || ]; then +
     pacman -S nvidia nvidia-utils
 fi
 if [ "$CPUHERSTELLER" == Intel ]; then
