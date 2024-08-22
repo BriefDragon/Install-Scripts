@@ -36,7 +36,7 @@ read -p "Wie soll das Root-Passwort lauten? (Root ist das eqivalent zum Windows 
             exit 1
         fi
 read -p "Wisst du einen Minimalen Install?(y/N) (Ohne DE(KDE Plasma) or WM(Hyprland))" MINIMAL
-    if [ "$MINIMAL" == y || "$MINIMAL" == Y || "$MINIMAL" == yes || "$MINIMAL" == Yes ||]; then
+    if [ "$MINIMAL" == y ] #|| "$MINIMAL" == Y || "$MINIMAL" == yes || "$MINIMAL" == Yes ||]; then
         cat /root/own-instraller/art-config1.txt
         echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen
         locale-gen
@@ -61,7 +61,7 @@ echo "KEYMAP="$TASTATURLAYOUT"" >> /etc/vconsole.conf
 echo "$HOSTNAME" >> /etc/hostname
 chpasswd <<< "root:"$ROOTPW""
 #"Treiber"
-if [ "$NVIDIA" == y || "$NVIDIA" == yes || "$NVIDIA" == Y || "$NVIDIA" == Yes || ]; then +
+if [ "$NVIDIA" == y ] #|| "$NVIDIA" == yes || "$NVIDIA" == Y || "$NVIDIA" == Yes || ]; then +
     pacman -S nvidia nvidia-utils
 fi
 if [ "$CPUHERSTELLER" == Intel ]; then
