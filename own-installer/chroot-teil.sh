@@ -75,7 +75,7 @@ fi
 cat /root/own-Installer/art-programs.txt
 if [ "$WMDE" == WM ]; then
     pacman -S --noconfirm wayland hyprland hyprpaper pipewire firefox libreoffice discover nemo wofi xcursor-vanilla-dmz
-    #
+    #cp /root/own-installer/dotinstaller.sh /root/home/$USERNAME
 fi
 if [ "$WMDE" == DE ]; then 
     pacman -S --noconfirm sddm plasma firefox libreoffice
@@ -90,5 +90,5 @@ grub-install
 grub-mkconfig -o /boot/grub/grub.cfg
 #ende 
 cat /root/own-installer/art-end.txt
-echo "Die Installation ist fertig und du kannst mit "reboot" neustarten"
+echo "Die Installation ist fertig und du kannst mit ’reboot’ neustarten. Wenn du Hyprland ausgewählt hast, kannst du die Installation der dotfiles nach dem reboot durch 1. ’sh dotinstaller.sh’ starten. (Anmerkung: Work in progress)"
 exit 1
