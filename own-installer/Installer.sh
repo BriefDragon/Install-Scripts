@@ -26,7 +26,7 @@ read -p "Bitte jetzt als letztes die Boot Partition auch im selben Schema.: " St
     mount "$Start" /mnt/boot/efi
 #ende der Partitionen ding 
 #Programme 
-cat /run/archiso/bootmnt/own-installer/art-programs.txt 
+cat ~/Install-Scripts/own-installer/art-programs.txt 
 pacstrap -K /mnt base linux linux-firmware grub efibootmgr nano networkmanager neofetch sof-firmware base-devel git sudo 
 genfstab /mnt > /mnt/etc/fstab
 cp -r ~/Install-Scripts/own-installer /mnt/root #Install-Scripts spaeter tauschen. #Please look what you write.  i have revisited this code 3 times and only now i see why the old version was loaded that i have written on the iso. I thought there were a bug but noooo. it loaded the old god daam version and i want to sleep. its 23:50 rn. i cant do this anymore.
