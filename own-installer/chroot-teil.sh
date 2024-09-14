@@ -76,6 +76,7 @@ if [ "$LC" == de ]; then
     locale-gen
     echo de_DE.UTF-8 >> /etc/locale.conf
     echo KEYMAP="$TASTATURLAYOUT" >> /etc/vconsole.conf
+    cp /root/own-installer/mirrorlist /etc/pacman.d/mirrorlist 
 fi
 if [ "$LC" == us ]; then
     echo en_US.UTF-8 UTF-8 >> /etc/locale.gen
