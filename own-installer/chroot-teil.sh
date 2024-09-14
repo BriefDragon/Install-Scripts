@@ -35,6 +35,8 @@ read -p "Wie soll das Root-Passwort lauten? (Root ist das eqivalent zum Windows 
             #echo "Die Passwörter stimmen nicht Ueberein. Bitte Script mit neustarten. ((1.) cd /root/own-installer (2.) sh chroot-teil.sh)"
             #exit 1
         #fi
+read -p "Welchen Texteditor willst du haben? (enter package name): " TEXT
+    pacman -Sy "$TEXT"
 read -p "Wisst du einen Minimalen Install?(y/N) (Ohne DE(KDE Plasma) or WM(Hyprland)): " MINIMAL
     if [ "$MINIMAL" == y ]; then #|| "$MINIMAL" == Y || "$MINIMAL" == yes || "$MINIMAL" == Yes ||]; then
         cat /root/own-instraller/art-config1.txt
