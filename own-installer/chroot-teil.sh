@@ -91,10 +91,11 @@ chpasswd <<< "root:"$ROOTPW""
 #"Treiber"
 pacman -S --noconfirm bluez bluez-utils blueman
 if [ "$NVIDIA" == y ]; then #|| "$NVIDIA" == yes || "$NVIDIA" == Y || "$NVIDIA" == Yes || ]; then +
-    pacman -S --noconfirm nvidia nvidia-utils libva-nvidia-driver egl-wayland
-    cp /root/own-installer/mkinitcpio.conf /etc/mkinitcpio.conf
-    echo options nvidia_drm modeset=1 dbdev=1 >> /etc/modprobe.d/nvidia.conf
-    mkinitcpio -P
+    pacman -S --noconfirm nvidia nvidia-utils 
+    #libva-nvidia-driver egl-wayland
+    #cp /root/own-installer/mkinitcpio.conf /etc/mkinitcpio.conf
+    #echo options nvidia_drm modeset=1 dbdev=1 >> /etc/modprobe.d/nvidia.conf
+    #mkinitcpio -P
 fi
 if [ "$CPUHERSTELLER" == Intel ]; then
     pacman -S --noconfirm intel-ucode
